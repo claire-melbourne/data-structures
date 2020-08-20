@@ -19,12 +19,18 @@ var Queue = function() {
   someInstance.dequeue = function() {
     // delete property at 0
     var dqed = storage['0'];
-    delete storage['0'];
+    //delete storage['0'];
     storageSize -= 1;
     // loop over keys
     for (var key in storage) {
+      var upCounter = parseInt(key) + 1;
+      if (!storage[upCounter]) {
+        delete storage[key];
+      } else {
+        storage[key] = storage[upCounter];
+      }
       // subtract parse int of current key by 1
-      var backCounter = parseInt(key) - 1;
+
       // subtract one from the size
       console.log(key);
     }
@@ -32,7 +38,7 @@ var Queue = function() {
   };
 
   someInstance.size = function() {
-    // takes in an object, in this case storage
+    // takes in an object, in case storage
     // if storage is empty, return 0
     // set a variable (count) = 0
     // loop over storage

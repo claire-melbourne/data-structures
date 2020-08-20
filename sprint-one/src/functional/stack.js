@@ -10,16 +10,21 @@ var Stack = function() {
     //take in value
     //adds it to end storage at numerical key (storageSize)
     storage[storageSize] = value;
-
     //increment storageSize by 1
     storageSize += 1;
   };
 
   someInstance.pop = function() {
+    //remove most recently added element
+    var currentVal = storage[storageSize - 1];
+    delete storage[storageSize - 1];
+    //decrement storageSize by 1
+    storageSize -= 1;
+    return currentVal;
+    //return popped element
   };
 
   someInstance.size = function() {
-
     var count = 0;
     if (storage === {}) {
       return 0;
