@@ -21,12 +21,30 @@ var LinkedList = function() {
   };
 
   list.removeHead = function() {
-
+    // set a variable (removed) equal to list.head.value
+    var removed = list.head.value;
+    list.head = list.head.next;
+    // return removed
+    return removed;
   };
 
   list.contains = function(target) {
+    //if list.head === null
+    if (list.head === null) {
+      return false;
+    }
+    var currentNode = list.head;
+    //var currentNode (start with list.head?)
+    //currentNode = value: 4, next: (value: null, next: null)
+    // while currentNode is defined
+    while (currentNode) {
+      if (target === currentNode.value) {
+        return true;
+      }
+      currentNode = currentNode.next;
+    }
+    return false;
   };
-
   return list;
 };
 
