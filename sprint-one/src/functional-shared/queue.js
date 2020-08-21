@@ -38,7 +38,6 @@ queueMethods.dequeue = function () {
   //  set current key to equal next key's value
   this.storageSize -= 1;
   return removedVal;
-
 };
 queueMethods.size = function () {
   // set counter to 0
