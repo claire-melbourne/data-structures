@@ -1,7 +1,7 @@
 var Tree = function(value) {
   var newTree = {};
-  console.log('value: ', value);
-  console.log('newTree: ', newTree);
+  // console.log('value: ', value);
+  // console.log('newTree: ', newTree);
   newTree.value = value;
   // your code here
   //extend tree methods to tree here?
